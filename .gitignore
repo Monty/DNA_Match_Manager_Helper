@@ -1,0 +1,16 @@
+## MAC OS
+.DS_Store
+
+# Output from running any commands
+*.csv
+
+# In case you save a spreadsheet
+*.xls
+*.ods
+
+# Hide temporary versions of files from git
+*[0-9].awk
+*[0-9].sh
+
+# Local backups
+*.bak

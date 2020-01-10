@@ -1,0 +1,88 @@
+if ($i == "Source Site") Source = i
+if ($i == "Download Date") Date = i
+if ($i == "Match Test ID") Test_ID = i
+if ($i == "Match Name") Name = i
+if ($i == "Email") Email = i
+if ($i == "Match Gender") gender = i
+if ($i == "an_Source Test Subject") an_Subject = i
+if ($i == "an_Source Test ID") an_Test_ID = i
+if ($i == "an_Shared cM") an_cMs = i
+if ($i == "an_Shared Segments") an_segs = i
+if ($i == "an_Match Test Admin Name") an_Admin = i
+if ($i == "an_Group Name") an_relationship = i
+if ($i == "gm_Source Kit") gm_Kit = i
+if ($i == "gm_1 to 1") gm_1to1 = i
+if ($i == "gm_Date Compared") gm_Date = i
+if ($i == "gm_Generation") gm_relationship = i
+if ($i == "gm_Largest Segment") gm_longest_cM = i
+if ($i == "gm_Overlap") gm_Overlap = i
+if ($i == "gm_Test Company") gm_site = i
+if ($i == "gm_Total cM") gm_cMs = i
+if ($i == "ft_Total cM") ft_cMs = i
+if ($i == "ft_Has Family Tree") ft_HasTree = i
+if ($i == "ft_About Me") ft_About = i
+if ($i == "ft_Paternal Ancestor Name") ft_PaternalName = i
+if ($i == "ft_Maternal Ancestor Name") ft_MaternalName = i
+if ($i == "ft_Match Date") ft_MatchDate = i
+if ($i == "ft_X Shared Segments") ft_X_Shared = i
+if ($i == "ft_Suggested Relationship") ft_relationship = i
+if ($i == "ft_Relationship Name") ft_relationshipName = i
+if ($i == "ft_Relationship Group Id") ft_RelationshipGroup = i
+if ($i == "ft_User Surnames") ft_Surnames = i
+if ($i == "ft_Longest Centimorgans") ft_longest_cM = i
+if ($i == "ft_Y DNA Markers") ft_Y_DNA = i
+if ($i == "ft_MT DNA Markers") ft_MT_DNA = i
+if ($i == "ft_Is X Match") ft_X_Match = i
+if ($i == "ft_Family Tree Url") ft_TreeUrl = i
+if ($i == "23_Surname") tw_Surname = i
+if ($i == "23_Chromosome Number") tw_ChromosomeNumber = i
+if ($i == "23_Chromosome Start Point") tw_ChromosomeStart = i
+if ($i == "23_Chromosome End Point") tw_ChromosomeEnd = i
+if ($i == "23_Genetic Distance") tw_GeneticDistance = i
+if ($i == "23_# SNPs") tw_#SNPs = i
+if ($i == "23_Full IBD") tw_FullIBD = i
+if ($i == "23_Link to Compare View") tw_LinktoCompareView = i
+if ($i == "23_Birth Year") tw_BirthYear = i
+if ($i == "23_Set Relationship") tw_relationship = i
+if ($i == "23_Predicted Relationship") tw_PredictedRelationship = i
+if ($i == "23_Relative Range") tw_RelativeRange = i
+if ($i == "23_Percent DNA Shared") tw_pct = i
+if ($i == "23_# Segments Shared") tw_segs = i
+if ($i == "23_Maternal Side") tw_MaternalSide = i
+if ($i == "23_Paternal Side") tw_PaternalSide = i
+if ($i == "23_Maternal Haplogroup") tw_MaternalHaplogroup = i
+if ($i == "23_Paternal Haplogroup") tw_PaternalHaplogroup = i
+if ($i == "23_Birthplace") tw_Birthplace = i
+if ($i == "23_Residence") tw_Residence = i
+if ($i == "23_Family Surnames") tw_FamilySurnames = i
+if ($i == "23_Family Locations") tw_FamilyLocations = i
+if ($i == "23_Maternal Grandmother Birth Country") tw_MaternalGrandmotherCountry = i
+if ($i == "23_Maternal Grandfather Birth Country") tw_MaternalGrandfatherCountry = i
+if ($i == "23_Paternal Grandmother Birth Country") tw_PaternalGrandmotherCountry = i
+if ($i == "23_Paternal Grandfather Birth Country") tw_PaternalGrandfatherCountry = i
+if ($i == "23_Self Reported Ashkenazi Jewish Descent") tw_Ashkenazi = i
+if ($i == "23_Notes") tw_notes = i
+if ($i == "23_Sharing Status") tw_SharingStatus = i
+if ($i == "mh_DNA Match ID") mh_DNAMatchID = i
+if ($i == "mh_Name") mh_Name = i
+if ($i == "mh_Age") mh_Age = i
+if ($i == "mh_Country") mh_Country = i
+if ($i == "mh_Contact DNA Match") mh_Contact = i
+if ($i == "mh_DNA Managed By") mh_ManagedBy = i
+if ($i == "mh_Contact DNA Manager") mh_ContactManager = i
+if ($i == "mh_Status") mh_Status = i
+if ($i == "mh_Estimated Relationship") mh_relationship = i
+if ($i == "mh_Total cM Shared") mh_cMs = i
+if ($i == "mh_Percent DNA Shared") mh_pct = i
+if ($i == "mh_Number Shared Segments") mh_segs = i
+if ($i == "mh_Largest Segment cM") mh_longest_cM = i
+if ($i == "mh_Review DNAMatch Page") mh_DNAMatchPage = i
+if ($i == "mh_Has Family Tree") mh_HasTree = i
+if ($i == "mh_Number Individuals In Tree") mh_IndividualsInTree = i
+if ($i == "mh_Tree Managed By") mh_ManagedBy = i
+if ($i == "mh_View Tree") mh_ViewTree = i
+if ($i == "mh_Contact Tree Manager") mh_ContactTreeManager = i
+if ($i == "mh_Number Of Smart Matches") mh_SmartMatches = i
+if ($i == "mh_Shared Ancestral Surnames") mh_SharedSurnames = i
+if ($i == "mh_All Ancestral Surnames") mh_AllSurnames = i
+if ($i == "mh_Notes") mh_notes = i
