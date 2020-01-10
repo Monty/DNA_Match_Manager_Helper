@@ -14,3 +14,7 @@
 
 # Local backups
 *.bak
+
+# Downloaded data used for examination and testing
+/native_downloads/
+/test/
