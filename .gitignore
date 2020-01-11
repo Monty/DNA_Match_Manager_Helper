@@ -11,6 +11,7 @@
 # Hide temporary versions of files from git
 *[0-9].awk
 *[0-9].sh
+*[0-9].txt
 
 # Local backups
 *.bak
