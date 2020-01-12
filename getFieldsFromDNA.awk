@@ -84,6 +84,13 @@ BEGIN {
     sub (/Female/,"F",sex)
     sub (/Male/,"M",sex)
     sub (/U/,"",sex)
+    sub (/PARENT_CHILD/,"Son",relationship)
+    sub (/FIRST_COUSIN/,"1st cousin",relationship)
+    sub (/SECOND_COUSIN/,"2nd cousin",relationship)
+    sub (/THIRD_COUSIN/,"3rd cousin",relationship)
+    gsub (/Cousin/,"cousin",relationship)
+    gsub (/; Once Removed/," - once removed",relationship)
+    gsub (/; Twice Removed/," - twice removed",relationship)
     printf ("%s\t%s\t\t%s\t%.2f\t%.0f\t%s\t%s\t%s\n", $Source ,$Name, \
             sex, pct, cMs, segs, longest_cM, relationship)
 }
