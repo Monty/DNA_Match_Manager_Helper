@@ -38,9 +38,8 @@ echo ""
 ./makeOneDNASPreadsheet.sh $MH_CURRENT >$MH_NEW
 ./makeOneDNASPreadsheet.sh $TW_CURRENT >$TW_NEW
 
-cp head.txt $RELATIVES_NEW
-grep -vh "^Source Site" $AN_NEW $FT_NEW $GM_NEW $MH_NEW $TW_NEW | sort -u |
-    sort --field-separator=$'\t' --key=6,6nr --key=5,5nr -f --key=2,2 >>$RELATIVES_NEW
+sort -u $AN_NEW $FT_NEW $GM_NEW $MH_NEW $TW_NEW |
+    sort --field-separator=$'\t' --key=6,6nr --key=5,5nr -f --key=2,2 >$RELATIVES_NEW
 
 echo "Differences from previous run:"
 diff -U 1 $RELATIVES_CURRENT $RELATIVES_NEW
