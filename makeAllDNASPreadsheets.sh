@@ -32,9 +32,11 @@ echo ""
 
 echo "==> Producing this new spreadsheet:"
 echo "$RELATIVES_NEW"
+# Grab header line
+grep -m 1 "^Source Site" $RELATIVES_TMP >$RELATIVES_NEW
 # Sort by cmS, pct, and then name
-sort -u $RELATIVES_TMP |
-    sort --field-separator=$'\t' --key=6,6nr --key=5,5nr -f --key=2,2 >$RELATIVES_NEW
+grep -v "^Source Site" $RELATIVES_TMP |
+    sort -u | sort --field-separator=$'\t' --key=6,6nr --key=5,5nr -f --key=2,2 >>$RELATIVES_NEW
 rm -f $RELATIVES_TMP
 
 # If there is no current spreadsheet to compare iagainst then exit

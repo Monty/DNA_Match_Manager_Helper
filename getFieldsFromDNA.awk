@@ -29,8 +29,7 @@ BEGIN {
         if ($i == "mh_Number Shared Segments") mh_segs = i
         if ($i == "mh_Largest Segment cM") mh_longest_cM = i
     }
-    # Leading space is required to ensure "sort -u"  puts header line at the top
-    print " Source Site\tMatch Name\tSide\tSex\tShared %\tShared cMs\tShared Segs\tLongest Seg\tRelationship"
+    print "Source Site\tMatch Name\tSide\tSex\tShared %\tShared cMs\tShared Segs\tLongest Seg\tRelationship"
     next
 }
 
