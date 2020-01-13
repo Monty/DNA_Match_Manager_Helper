@@ -48,4 +48,4 @@ diff -U 1 $RELATIVES_CURRENT $RELATIVES_NEW
 
 echo ""
 echo "==> Additions from previous run:"
-diff $RELATIVES_CURRENT $RELATIVES_NEW | grep "^>"
+diff $RELATIVES_CURRENT $RELATIVES_NEW | grep "^>" | cut -c 3-
