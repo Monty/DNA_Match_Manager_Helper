@@ -1,8 +1,28 @@
 #!/usr/bin/env bash
-# Process most recent DNA spreadsheets and generate diffs
+# Process most recently downloaded DNA Match Manager spreadsheets and generate diffs
 
 DATE="$(date +%y%m%d)"
 LONGDATE="$(date +%y%m%d.%H%M%S)"
+
+# use "-m" to change minimum cMs, for example:
+#     ./makeAllDNASPreadsheets.sh -m 49.5
+# use .5 less than you actually want because cMs are rounded up on the Ancestry web page
+# default is 100 cMs
+cMs_min=99.5
+while getopts ":m:" opt; do
+    case $opt in
+    m)
+        cMs_min="$OPTARG"
+        ;;
+    \?)
+        echo "[Warning] Ignoring invalid option: -$OPTARG" >&2
+        ;;
+    :)
+        echo "[Error] Option -$OPTARG requires an argument" >&2
+        exit 1
+        ;;
+    esac
+done
 
 # Generated spreadsheets
 RELATIVES_NEW="Relatives-$LONGDATE.csv"
@@ -27,7 +47,7 @@ for i in "${KEYS[@]}"; do
     if [ $? == 0 ]; then
         CURRENT_FILE=$(ls -1t $target | head -1)
         echo $CURRENT_FILE
-        csvformat -T $CURRENT_FILE | awk -f getFieldsFromDNA.awk >>$RELATIVES_TMP
+        csvformat -T $CURRENT_FILE | awk -v cMs_min=$cMs_min -f getFieldsFromDNA.awk >>$RELATIVES_TMP
     fi
 done
 echo ""
