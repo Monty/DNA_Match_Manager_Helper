@@ -7,6 +7,8 @@ LONGDATE="$(date +%y%m%d.%H%M%S)"
 # Generated spreadsheets
 RELATIVES_NEW="Relatives-$LONGDATE.csv"
 RELATIVES_TMP="Relatives-$LONGDATE.tmp"
+# Make sure $RELATIVES_TMP exists and is empty
+rm -f $RELATIVES_TMP
 touch $RELATIVES_TMP
 # Latest previously generated spreadsheet
 find . -name "Relatives*.csv" -maxdepth 1 | grep -q '^.'
@@ -25,7 +27,7 @@ for i in "${KEYS[@]}"; do
     if [ $? == 0 ]; then
         CURRENT_FILE=$(ls -1t $target | head -1)
         echo $CURRENT_FILE
-        ./makeOneDNASPreadsheet.sh $CURRENT_FILE >>$RELATIVES_TMP
+        csvformat -T $CURRENT_FILE | awk -f getFieldsFromDNA.awk >>$RELATIVES_TMP
     fi
 done
 echo ""
