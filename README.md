@@ -44,7 +44,7 @@ each output file name. Be consistent!
 * MyHeritage
 * AllSites
 
-For example, save as `Ancestry_1.13.2020.2.48.28PM.csv`instead of
+For example, save as `Match-Ancestry_1.13.2020.2.48.28PM.csv`instead of
 `MatchManagerExport_1.13.2020.2.48.28PM.csv`
 
 Run `./makeAllDNASPreadsheets.sh` to collect all matches sharing 100 cMs or
