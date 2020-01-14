@@ -38,7 +38,7 @@ fi
 
 # Process files downloaded by DNA Match Manager
 # Use the latest .csv files with names containing one of these strings
-KEYS=(23andMe Ancestry FTDNA GEDmatch MyHeritage)
+KEYS=(23andMe Ancestry FTDNA GEDmatch MyHeritage AllSites)
 #
 echo "==> Processing these current files:"
 for i in "${KEYS[@]}"; do
