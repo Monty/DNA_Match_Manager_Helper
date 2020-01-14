@@ -47,9 +47,9 @@ each output file name. Be consistent!
 For example, save as `Match-Ancestry_1.13.2020.2.48.28PM.csv`instead of
 `MatchManagerExport_1.13.2020.2.48.28PM.csv`
 
-Run `./makeAllDNASPreadsheets.sh` to collect all matches sharing 100 cMs or
+Run `./makeAllDNASpreadsheets.sh` to collect all matches sharing 100 cMs or
 more.  To change the minimum cMs saved, use the -m switch, i.e.
-`./makeAllDNASPreadsheets.sh -m 49.5` *Note: if you want 50 cM, enter 49.5 as
+`./makeAllDNASpreadsheets.sh -m 49.5` *Note: if you want 50 cM, enter 49.5 as
 some web sites show cMs rounded up to the next whole number.*
 
 ### ProTips
