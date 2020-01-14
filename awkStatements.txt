@@ -1,3 +1,6 @@
+# Generated awk statements that can be modified and used in getFieldsFromDNA.awk
+# Change the variable name to be simple and meaningful, e.g. an_cMs, an_segs, mh_cMs, mh_segs, etc.
+
 if ($i == "Source Site") Source = i
 if ($i == "Download Date") Date = i
 if ($i == "Match Test ID") Test_ID = i
