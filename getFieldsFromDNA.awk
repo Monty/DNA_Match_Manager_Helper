@@ -35,6 +35,7 @@ BEGIN {
 
 /^23 & Me/ {
     if ($tw_pct*74.6 < cMs_min) next
+    side = ""
     pct = $tw_pct
     cMs = $tw_pct*74.6
     segs = $tw_segs
@@ -44,6 +45,7 @@ BEGIN {
 
 /^Ancestry/ {
     if ($an_cMs < cMs_min) next
+    side = ""
     pct = $an_cMs/74.6
     cMs = $an_cMs
     segs = $an_segs
@@ -53,6 +55,7 @@ BEGIN {
 
 /^FTDNA/ {
     if ($ft_cMs < cMs_min) next
+    side = ""
     pct = $ft_cMs/74.6
     cMs = $ft_cMs
     segs = ""
@@ -62,6 +65,7 @@ BEGIN {
 
 /^GEDMatch/ {
     if ($gm_cMs < cMs_min) next
+    side = ""
     pct = $gm_cMs/74.6
     cMs = $gm_cMs
     segs = ""
@@ -71,6 +75,7 @@ BEGIN {
 
 /^My Heritage/ {
     if ($mh_cMs < cMs_min) next
+    side = ""
     pct = $mh_pct
     cMs = $mh_cMs
     segs = $mh_segs
@@ -84,13 +89,14 @@ BEGIN {
     sub (/Female/,"F",sex)
     sub (/Male/,"M",sex)
     sub (/U/,"",sex)
-    sub (/PARENT_CHILD/,"Son",relationship)
+    sub (/PARENT_CHILD/,"Parent or child",relationship)
+    sub (/CLOSE_FAMILY/,"Close family",relationship)
     sub (/FIRST_COUSIN/,"1st cousin",relationship)
     sub (/SECOND_COUSIN/,"2nd cousin",relationship)
     sub (/THIRD_COUSIN/,"3rd cousin",relationship)
     gsub (/Cousin/,"cousin",relationship)
     gsub (/; Once Removed/," - once removed",relationship)
     gsub (/; Twice Removed/," - twice removed",relationship)
-    printf ("%s\t%s\t\t%s\t%.2f\t%.0f\t%s\t%s\t%s\n", $Source ,$Name, \
-            sex, pct, cMs, segs, longest_cM, relationship)
+    printf ("%s\t%s\t%s\t%s\t%.2f\t%.0f\t%s\t%s\t%s\n", $Source ,$Name, \
+            side, sex, pct, cMs, segs, longest_cM, relationship)
 }
