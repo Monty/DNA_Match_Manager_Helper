@@ -4,7 +4,7 @@
 free program that downloads DNA match data from Ancestry, 23 & Me, Family Tree
 DNA, GedMatch Genesis, and My Heritage (*in minutes instead of days*). However,
 some important numeric data in its output file, such as Shared cMs, is in a
-different column for each site. That makes it difficult to sort into a useful
+[different column for each site](DNA_Match_Manager-FieldNames.md). That makes it difficult to sort into a useful
 order.
 
 This program will extract and coalesce data from those files into a summary

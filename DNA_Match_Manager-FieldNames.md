@@ -1,5 +1,5 @@
 ### Field names/descriptions of DNA Match Manager output as of Jan 12, 2020
-These are the field names this program is based on. As long as the names don't change,
+Field names this program is based on. Bold fields are used. As long as the names don't change,
 the positions don't matter.
 
 \#  | Column Header | Description
