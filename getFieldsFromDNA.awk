@@ -43,7 +43,7 @@ BEGIN {
 }
 
 /^Ancestry/ {
-    if ($an_cMs < cMs_min) exit
+    if ($an_cMs < cMs_min) next
     pct = $an_cMs/74.6
     cMs = $an_cMs
     segs = $an_segs
@@ -52,7 +52,7 @@ BEGIN {
 }
 
 /^FTDNA/ {
-    if ($ft_cMs < cMs_min) exit
+    if ($ft_cMs < cMs_min) next
     pct = $ft_cMs/74.6
     cMs = $ft_cMs
     segs = ""
@@ -61,7 +61,7 @@ BEGIN {
 }
 
 /^GEDMatch/ {
-    if ($gm_cMs < cMs_min) exit
+    if ($gm_cMs < cMs_min) next
     pct = $gm_cMs/74.6
     cMs = $gm_cMs
     segs = ""
@@ -70,7 +70,7 @@ BEGIN {
 }
 
 /^My Heritage/ {
-    if ($mh_cMs < cMs_min) exit
+    if ($mh_cMs < cMs_min) next
     pct = $mh_pct
     cMs = $mh_cMs
     segs = $mh_segs
