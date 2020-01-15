@@ -24,6 +24,15 @@ while getopts ":m:" opt; do
     esac
 done
 
+# Make sure we can execute csvformat.
+if [ ! -x "$(which csvformat 2>/dev/null)" ]; then
+    echo "[Error] Can't run csvformat. Install csvkit and rerun this script."
+    echo "        See: https://csvkit.readthedocs.io/"
+    echo "        To install, type: sudo pip3 install csvkit"
+    echo "        To test, type:  csvformat --version"
+    exit 1
+fi
+
 # Generated spreadsheets
 RELATIVES_NEW="Relatives-$LONGDATE.csv"
 RELATIVES_TMP="Relatives-$LONGDATE.tmp"
