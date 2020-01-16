@@ -4,6 +4,7 @@ BEGIN {
     FS="\t"
     # stop at 99.5 cMs (to handle rounding up to 100) unless cMs_min is set
     if (cMs_min  == "") cMs_min  = 99.5
+    cMs_pct_factor = 74.6   # Used to convert cMs to pct and vice versa
 }
 
 /^Source Site/ {
@@ -34,10 +35,10 @@ BEGIN {
 }
 
 /^23 & Me/ {
-    if ($tw_pct*74.6 < cMs_min) next
+    if ($tw_pct*cMs_pct_factor < cMs_min) next
     side = ""
     pct = $tw_pct
-    cMs = $tw_pct*74.6
+    cMs = $tw_pct*cMs_pct_factor
     segs = $tw_segs
     longest_cM = ""
     relationship = $tw_relationship
@@ -46,7 +47,7 @@ BEGIN {
 /^Ancestry/ {
     if ($an_cMs < cMs_min) next
     side = ""
-    pct = $an_cMs/74.6
+    pct = $an_cMs/cMs_pct_factor
     cMs = $an_cMs
     segs = $an_segs
     longest_cM = ""
@@ -56,7 +57,7 @@ BEGIN {
 /^FTDNA/ {
     if ($ft_cMs < cMs_min) next
     side = ""
-    pct = $ft_cMs/74.6
+    pct = $ft_cMs/cMs_pct_factor
     cMs = $ft_cMs
     segs = ""
     longest_cM = $ft_longest_cM
@@ -66,7 +67,7 @@ BEGIN {
 /^GEDMatch/ {
     if ($gm_cMs < cMs_min) next
     side = ""
-    pct = $gm_cMs/74.6
+    pct = $gm_cMs/cMs_pct_factor
     cMs = $gm_cMs
     segs = ""
     longest_cM = sprintf("%d",$gm_longest_cM)
