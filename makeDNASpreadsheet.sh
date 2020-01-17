@@ -4,6 +4,10 @@
 DATE="$(date +%y%m%d)"
 LONGDATE="$(date +%y%m%d.%H%M%S)"
 
+# Make sure we are in the correct directory
+DIRNAME=`dirname "$0"`
+cd $DIRNAME
+
 # use "-m" to change minimum cMs, for example:
 #     ./makeAllDNASPreadsheets.sh -m 49.5
 # use .5 less than you actually want because cMs are rounded up on the Ancestry web page
