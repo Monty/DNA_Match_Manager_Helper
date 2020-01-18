@@ -1,21 +1,26 @@
 ## DNA Match Manager Helper
 
-[**DNA Match Manager**](https://heirloomsoftware.com/dna-match-manager/) is a
-free program that downloads DNA match data from Ancestry, 23 & Me, Family Tree
-DNA, GedMatch Genesis, and My Heritage (*in minutes instead of days*). However,
-some important numeric data in its output file, such as Shared cMs, is in a
-[different column for each site](DNA_Match_Manager-FieldNames.md). That makes
-it difficult to sort into a useful order.
+[DNA Match Manager]:https://heirloomsoftware.com/dna-match-manager/
+[DNA Match Manager Helper]:https://github.com/Monty/DNA_Match_Manager_Helper
+[cvskit]:http://csvkit.rtfd.org
+[columns]:DNA_Match_Manager-FieldNames.md
 
-This shell script overcomes that problem by extracting and coalescing data from
-those files into a summary spreadsheet sorted by Shared cMs, Shared %, and then
-Match Name so that closest DNA relatives are at the top.
+**[DNA Match Manager][]** is a free program that downloads DNA match data from
+Ancestry, 23andMe, FamilyTreeDNA, GEDmatch, and MyHeritage (*in minutes instead
+of days*). However, some important numeric data in its output files, such as
+Shared cMs, is in a [different column for each site][columns]. That makes it
+difficult to sort into a useful order.
+
+The shell script **makeDNASpreadsheet.sh** overcomes that problem by extracting
+and coalescing data from those files into a summary spreadsheet sorted by
+Shared cMs, Shared %, and then Match Name so that the closest DNA relatives are
+at the top.
 
 The resulting spreadsheet contains the following columns:
 
 | Column | Description |
 |--------:|:-------------|
-| Source Site | Site the data came from - *e.g. Ancestry, 23 & Me, etc.* |
+| Source Site | Site the data came from - *e.g. Ancestry, 23andMe, etc.* |
 | Match Name | Name of the person who is a DNA match |
 | Side | P, M, or blank - *i.e. P[aternal] or M[aternal]* |
 | Gender | M, F, or blank |
@@ -23,44 +28,50 @@ The resulting spreadsheet contains the following columns:
 | Shared cMs | Total amount of DNA shared (*in cMs*) |
 | Shared Segs | Total number of DNA segments shared |
 | Longest Seg | Size (*in cMs*) of largest matching segment |
-| Relationship | Varies - *e.g. GedMatch uses a number instead of text* |
+| Relationship | Varies - *e.g. GEDmatch uses a number instead of text* |
 
 
 ### Prerequisites
 
-In addition to [**DNA Match
-Manager**](https://heirloomsoftware.com/dna-match-manager/) you'll need
-csvformat, which is included in [cvskit](http://csvkit.rtfd.org/), and the
-standard utilities bash, awk, grep, and python.
+In addition to **[DNA Match Manager][]** you'll need csvformat, which is
+included in **[cvskit][]**, and the standard utilities bash, awk, grep, and
+python. ***Note:*** *Installing cvskit requires both python and pip. If they
+aren't already installed, you should be able to find installation instructions
+on the web.*
 
 ### Instructions
 
-Run DNA Match Manager to collect data from any sites you use. Save either a
-file per site, or a single file containing all sites. Include **one** of these
-key strings in the name you choose for each output file. Be consistent in your
-methodology!
+1. Clone or download **[DNA Match Manager Helper][]**.
 
-* 23andMe
-* Ancestry
-* FTDNA
-* GEDmatch
-* MyHeritage
-* AllSites - *Only if you choose to use a single file to contain all data*
+2. Run **[DNA Match Manager][]** to collect data from any sites you use. Save
+   (*in the directory created in step 1*) either a file per site or a single
+file containing all sites. Include **one** of these key strings in the name you
+choose for each output file. Be consistent in your methodology!
 
-For example, instead of the default`MatchManagerExport_1.13.2020.2.48.28PM.csv`
-save as `Match-Ancestry_1.13.2020.2.48.28PM.csv` (*or any other name containing
-"Ancestry"*).
+  * 23andMe
+  * Ancestry
+  * FTDNA
+  * GEDmatch
+  * MyHeritage
+  * AllSites - *Only if you choose to use a single file to contain all data*
 
-Run `./makeDNASpreadsheet.sh` to generate a new summary spreadsheet with a
-current *timestamped* name - e.g. Relatives-*200111.103106*.csv
+  For example, instead of the default
+**`MatchManagerExport_1.13.2020.2.48.28PM.csv`** save your 23andMe match data
+as **`Match-23andMe_1.13.2020.2.48.28PM.csv`** (*or any other name containing
+"23andMe"*).
 
-The default 100 cMs minimum is appropriate for adoptees or others seeking close
-relatives. If instead you are doing genealogy research a lower minimum will be
-more helpful. 
+3. In a terminal window, type: **`./makeDNASpreadsheet.sh`** to generate a
+   match summary spreadsheet and (*if there are any*) a list of matches added
+since the previous run. They will have *timestamped* names such as
+Relatives-*200111.103106*.csv and Additions-*200111.103106*.csv
 
-To change the minimum cMs saved, use the -m switch, i.e.
-`./makeAllDNASpreadsheets.sh -m 49.5` *Note: if you want 50 cM, enter 49.5 as
-some web sites show cMs rounded up to the next whole number.*
+  By default, only matches sharing more than 100 cMs are saved. This is
+appropriate for adoptees or others seeking close DNA relatives. If you are
+doing genealogy research a lower minimum will be more helpful. 
+
+  To change the minimum cMs saved, use the **-m** switch, e.g. in a terminal
+window type: **`./makeDNASpreadsheet.sh -m 19.5`** ***Note:*** *If you want 20
+cM, enter 19.5 as some web sites show cMs rounded up to the next whole number.*
 
 ### ProTips
 
@@ -70,14 +81,15 @@ missing data, and change erroneous relationships (*e.g. second cousin to first
 cousin once removed, etc.*).
 
 Don't delete the Relatives-*timestamp*.csv file produced by this script. It
-will be used by later runs to produce a list of additions that can be
-cut/pasted into your master spreadsheet. You can either paste them one at a
-time into their proper slot, or paste them all at the bottom and then sort the
-master spreadsheet by Shared cMs, Shared %, and then Match Name to move them
-into the correct slot.
+will be used by later runs to produce an Additions-*timestamp*.csv file
+containing data that can be cut/pasted into your master spreadsheet. You can
+either paste that data one line at a time into its proper slot, or paste it all
+at the bottom and then sort it by Shared cMs, Shared %, and then Match Name to
+move it into the correct slot.
 
-There is no reason to run `./makeDNASpreadsheet.sh` again until you know or
-suspect you have a new relative that shares more DNA than the minimum saved.
-Run it monthly if you don't keep a close watch on your DNA testing sites.
+There is no reason to run **`./makeDNASpreadsheet.sh`** again until you know or
+suspect you have a new relative that shares more DNA than the minimum cMs
+saved. Run it monthly if you don't keep a close watch on your DNA testing
+sites.
 
 Enjoy!
