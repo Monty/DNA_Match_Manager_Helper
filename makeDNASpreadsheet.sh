@@ -9,7 +9,7 @@ DIRNAME=$(dirname "$0")
 cd $DIRNAME
 
 # use "-m" to change minimum cMs, for example:
-#     ./makeAllDNASPreadsheets.sh -m 49.5
+#     ./makeDNASpreadsheet.sh -m 19.5
 # use .5 less than you actually want because cMs are rounded up on the Ancestry web page
 # default is 100 cMs
 cMs_min=99.5
