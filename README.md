@@ -65,6 +65,10 @@ as **`Match-23andMe_1.13.2020.2.48.28PM.csv`** (*or any other name containing
 since the previous run. They will have *timestamped* names such as
 Relatives-*200111.103106*.csv and Additions-*200111.103106*.csv
 
+  Or you can simply double click **`run.command`** in a Finder window (*or
+right-click and select 'Open'*) which will automatically open a Terminal window
+and run **`./makeDNASpreadsheet.sh`** for you.
+
   By default, only matches sharing more than 100 cMs are saved. This is
 appropriate for adoptees or others seeking close DNA relatives. If you are
 doing genealogy research a lower minimum will be more helpful. 
