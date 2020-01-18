@@ -5,7 +5,7 @@ DATE="$(date +%y%m%d)"
 LONGDATE="$(date +%y%m%d.%H%M%S)"
 
 # Make sure we are in the correct directory
-DIRNAME=`dirname "$0"`
+DIRNAME=$(dirname "$0")
 cd $DIRNAME
 
 # use "-m" to change minimum cMs, for example:
@@ -32,14 +32,14 @@ done
 if [ ! -x "$(which csvformat 2>/dev/null)" ]; then
     echo "[Error] Can't run csvformat. Install csvkit and rerun this script."
     echo "        See: https://csvkit.readthedocs.io/"
-    echo "        To install, type: sudo pip3 install csvkit"
-    echo "        To test, type:  csvformat --version"
+    echo "        To test after installing, type:  csvformat --version"
     exit 1
 fi
 
 # Generated spreadsheets
 RELATIVES_NEW="Relatives-$LONGDATE.csv"
 RELATIVES_TMP="Relatives-$LONGDATE.tmp"
+ADDITIONS_NEW="Additions-$LONGDATE.csv"
 # Make sure $RELATIVES_TMP exists and is empty
 rm -f $RELATIVES_TMP
 touch $RELATIVES_TMP
@@ -77,10 +77,16 @@ rm -f $RELATIVES_TMP
 # If there is no current spreadsheet to compare iagainst then exit
 [ -z "$RELATIVES_CURRENT" ] && exit
 
-echo ""
-echo "==> Differences from previous run:"
-diff -U 1 $RELATIVES_CURRENT $RELATIVES_NEW
-
-echo ""
-echo "==> Additions from previous run:"
-diff $RELATIVES_CURRENT $RELATIVES_NEW | grep "^>" | cut -c 3-
+diff -q $RELATIVES_CURRENT $RELATIVES_NEW >/dev/null 2>&1
+if [ $? == 1 ]; then
+    echo ""
+    echo "==> Differences from the previous run:"
+    diff -U 1 $RELATIVES_CURRENT $RELATIVES_NEW
+    echo ""
+    echo "==> These additions from the previous run have been saved in $ADDITIONS_NEW"
+    diff $RELATIVES_CURRENT $RELATIVES_NEW | grep "^>" | cut -c 3- >$ADDITIONS_NEW
+    cat $ADDITIONS_NEW
+else
+    echo ""
+    echo "==> No differences from previous run"
+fi
