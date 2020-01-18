@@ -44,36 +44,36 @@ on the web.*
 1. Clone or download **[DNA Match Manager Helper][]**.
 
 2. Run **[DNA Match Manager][]** to collect data from any sites you use. Save
-   (*in the directory created in step 1*) either a file per site or a single
+(*in the directory created in step 1*) either a file per site or a single
 file containing all sites. Include **one** of these key strings in the name you
 choose for each output file. Be consistent in your methodology!
 
-  * 23andMe
-  * Ancestry
-  * FTDNA
-  * GEDmatch
-  * MyHeritage
-  * AllSites - *Only if you choose to use a single file to contain all data*
+    * 23andMe
+    * Ancestry
+    * FTDNA
+    * GEDmatch
+    * MyHeritage
+    * AllSites - *Only if you choose to use a single file to contain all data*
 
-  For example, instead of the default
+    For example, instead of the default
 **`MatchManagerExport_1.13.2020.2.48.28PM.csv`** save your 23andMe match data
 as **`Match-23andMe_1.13.2020.2.48.28PM.csv`** (*or any other name containing
 "23andMe"*).
 
 3. In a terminal window, type: **`./makeDNASpreadsheet.sh`** to generate a
-   match summary spreadsheet and (*if there are any*) a list of matches added
+match summary spreadsheet and (*if there are any*) a list of matches added
 since the previous run. They will have *timestamped* names such as
 Relatives-*200111.103106*.csv and Additions-*200111.103106*.csv
 
-  Or you can simply double click **`run.command`** in a Finder window (*or
+    Or you can simply double click **`run.command`** in a Finder window (*or
 right-click and select 'Open'*) which will automatically open a Terminal window
 and run **`./makeDNASpreadsheet.sh`** for you.
 
-  By default, only matches sharing more than 100 cMs are saved. This is
+    By default, only matches sharing more than 100 cMs are saved. This is
 appropriate for adoptees or others seeking close DNA relatives. If you are
-doing genealogy research a lower minimum will be more helpful. 
+doing genealogy research a lower minimum will be more helpful.
 
-  To change the minimum cMs saved, use the **-m** switch, e.g. in a terminal
+    To change the minimum cMs saved, use the **-m** switch, e.g. in a terminal
 window type: **`./makeDNASpreadsheet.sh -m 19.5`** ***Note:*** *If you want 20
 cM, enter 19.5 as some web sites show cMs rounded up to the next whole number.*
 
