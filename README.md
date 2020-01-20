@@ -89,7 +89,9 @@ cM, enter 19.5 as some web sites show cMs rounded up to the next whole number.*
 Create a permanent master spreadsheet from the Relatives-*timestamp*.csv file
 and save it as a non-csv spreadsheet. Use that spreadsheet to make notes, add
 missing data, and change erroneous relationships (*e.g. second cousin to first
-cousin once removed, etc.*).
+cousin once removed, etc.*). Add as many columns as you need for things like
+email address, most recent common ancestor, birth year, location, common
+surnames, etc.
 
 Don't delete the Relatives-*timestamp*.csv file produced by this script. It
 will be used by later runs to produce an Additions-*timestamp*.csv file
