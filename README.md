@@ -95,12 +95,17 @@ Don't delete the Relatives-*timestamp*.csv file produced by this script. It
 will be used by later runs to produce an Additions-*timestamp*.csv file
 containing data that can be cut/pasted into your master spreadsheet. You can
 either paste that data one line at a time into its proper slot, or paste it all
-at the bottom and then sort it by Shared cMs, Shared %, and then Match Name to
-move it into the correct slot.
+at the bottom and then sort it by Shared cMs (*descending*), Shared %
+(*descending*), and then Match Name (*ascending*) to move it into the correct
+slot.
 
 There is no reason to run **`./makeDNASpreadsheet.sh`** again until you know or
 suspect you have a new relative that shares more DNA than the minimum cMs
 saved. Run it monthly if you don't keep a close watch on your DNA testing
 sites.
+
+If you want to see what added matches will look like without waiting for new
+ones to show up on the web, just reduce the minimum cMs slightly, e.g.
+**`./makeDNASpreadsheet.sh -m 99`**
 
 Enjoy!
