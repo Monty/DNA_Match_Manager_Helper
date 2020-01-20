@@ -4,6 +4,7 @@
 [DNA Match Manager Helper]:https://github.com/Monty/DNA_Match_Manager_Helper
 [cvskit]:http://csvkit.rtfd.org
 [columns]:DNA_Match_Manager-FieldNames.md
+[Windows Subsystem for Linux]:https://docs.microsoft.com/en-us/windows/wsl/faq
 
 **[DNA Match Manager][]** is a free program that downloads DNA match data from
 Ancestry, 23andMe, FamilyTreeDNA, GEDmatch, and MyHeritage (*in minutes instead
@@ -38,6 +39,12 @@ included in **[cvskit][]**, and the standard utilities bash, awk, grep, and
 python. ***Note:*** *Installing cvskit requires both python and pip. If they
 aren't already installed, you should be able to find installation instructions
 on the web.*
+
+### Compatibility
+
+Tested on macOS Mojave and Catalina. Tested on Ubuntu 18.04. Should work in
+Windows 10 under **[Windows Subsystem for Linux][]** as long as prerequisites
+are satisfied.
 
 ### Instructions
 
