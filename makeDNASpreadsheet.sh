@@ -44,7 +44,7 @@ ADDITIONS_NEW="Additions-$LONGDATE.csv"
 rm -f $RELATIVES_TMP
 touch $RELATIVES_TMP
 # Latest previously generated spreadsheet
-find . -name "Relatives*.csv" -maxdepth 1 | grep -q '^.'
+find . -maxdepth 1 -name "Relatives*.csv" | grep -q '^.'
 if [ $? == 0 ]; then
     RELATIVES_CURRENT=$(ls -1t Relatives-*csv | head -1)
 fi
@@ -56,7 +56,7 @@ KEYS=(23andMe Ancestry FTDNA GEDmatch MyHeritage AllSites)
 echo "==> Processing these current files:"
 for i in "${KEYS[@]}"; do
     target="*$i*.csv"
-    find . -name "$target" -maxdepth 1 | grep -q '^.'
+    find . -maxdepth 1 -name "$target" | grep -q '^.'
     if [ $? == 0 ]; then
         CURRENT_FILE=$(ls -1t $target | head -1)
         echo $CURRENT_FILE
