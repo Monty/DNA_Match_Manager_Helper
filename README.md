@@ -63,8 +63,8 @@ choose for each output file. Be consistent in your methodology!
     * AllSites - *Only if you choose to use a single file to contain all data*
 
     For example, instead of the default
-**`MatchManagerExport_1.13.2020.2.48.28PM.csv`** save your 23andMe match data
-as **`Match-23andMe_1.13.2020.2.48.28PM.csv`** (*or any other name containing
+**MatchManagerExport_1.13.2020.2.48.28PM.csv** save your 23andMe match data
+as **Match-23andMe_1.13.2020.2.48.28PM.csv** (*or any other name containing
 "23andMe"*).
 
 3. In a terminal window, type: **`./makeDNASpreadsheet.sh`** to generate a
@@ -109,5 +109,9 @@ sites.
 If you want to see what added matches will look like without waiting for new
 ones to show up on the web, just reduce the minimum cMs slightly, e.g.
 **`./makeDNASpreadsheet.sh -m 99`**
+
+If you want to permanently change the minimum cMs saved, edit
+**makeDNASpreadsheet.sh** and change the line **`cMs_min=99.5`** to a
+different value.
 
 Enjoy!
