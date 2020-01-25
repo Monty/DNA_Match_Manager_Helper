@@ -35,7 +35,8 @@ The resulting spreadsheet contains the following columns:
 ### Prerequisites
 
 In addition to **[DNA Match Manager][]** you'll need a few standard tools such
-as bash, awk, and grep.
+as bash, awk, and grep which are installed by default on both macOS and Linux,
+and are installed by  **[Windows Subsystem for Linux][]** on Windows 10.
 
 ### Compatibility
 
