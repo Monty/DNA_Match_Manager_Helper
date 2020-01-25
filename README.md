@@ -40,8 +40,7 @@ as bash, awk, and grep.
 ### Compatibility
 
 Tested on macOS Mojave and Catalina. Tested on Ubuntu 18.04. Should work in
-Windows 10 under **[Windows Subsystem for Linux][]** as long as prerequisites
-are satisfied.
+Windows 10 if **[Windows Subsystem for Linux][]** is installed.
 
 ### Instructions
 
