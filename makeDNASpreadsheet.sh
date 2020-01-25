@@ -28,14 +28,6 @@ while getopts ":m:" opt; do
     esac
 done
 
-# Make sure we can execute csvformat.
-if [ ! -x "$(which csvformat 2>/dev/null)" ]; then
-    echo "[Error] Can't run csvformat. Install csvkit and rerun this script."
-    echo "        See: https://csvkit.readthedocs.io/"
-    echo "        To test after installing, type:  csvformat --version"
-    exit 1
-fi
-
 # Generated spreadsheets
 RELATIVES_NEW="Relatives-$LONGDATE.csv"
 RELATIVES_TMP="Relatives-$LONGDATE.tmp"
@@ -60,7 +52,7 @@ for i in "${KEYS[@]}"; do
     if [ $? == 0 ]; then
         CURRENT_FILE=$(ls -1t $target | head -1)
         echo $CURRENT_FILE
-        csvformat -T $CURRENT_FILE | awk -v cMs_min=$cMs_min -f getFieldsFromDNA.awk >>$RELATIVES_TMP
+        awk -v cMs_min=$cMs_min -f getFieldsFromDNA.awk $CURRENT_FILE >>$RELATIVES_TMP
     fi
 done
 echo ""

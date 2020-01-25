@@ -34,11 +34,8 @@ The resulting spreadsheet contains the following columns:
 
 ### Prerequisites
 
-In addition to **[DNA Match Manager][]** you'll need csvformat, which is
-included in **[cvskit][]**, and the standard utilities bash, awk, grep, and
-python. ***Note:*** *Installing cvskit requires both python and pip. If they
-aren't already installed, you should be able to find installation instructions
-on the web.*
+In addition to **[DNA Match Manager][]** you'll need a few standard tools such
+as bash, awk, and grep.
 
 ### Compatibility
 
