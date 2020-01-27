@@ -66,7 +66,7 @@ grep -v "^Source Site" $RELATIVES_TMP |
     sort -u | sort --field-separator=$'\t' --key=6,6nr --key=5,5nr -f --key=2,2 >>$RELATIVES_NEW
 rm -f $RELATIVES_TMP
 
-# If there is no current spreadsheet to compare iagainst then exit
+# If there is no current spreadsheet to compare against then exit
 [ -z "$RELATIVES_CURRENT" ] && exit
 
 diff -q $RELATIVES_CURRENT $RELATIVES_NEW >/dev/null 2>&1
@@ -80,5 +80,5 @@ if [ $? == 1 ]; then
     cat $ADDITIONS_NEW
 else
     echo ""
-    echo "==> No differences from previous run"
+    echo "==> No differences from previous run."
 fi
