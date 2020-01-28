@@ -88,7 +88,8 @@ Create a permanent master spreadsheet from the Relatives-*timestamp*.csv file
 and save it as a non-csv spreadsheet. Use that spreadsheet to make notes, add
 missing data, and change erroneous relationships (*e.g. second cousin to first
 cousin once removed, etc.*). Add as many columns as you need for things like
-most recent common ancestor, birth year, location, common surnames, etc.
+most recent common ancestor, birth year, location, common surnames, or data
+from [site specific columns][columns].
 
 Don't delete the Relatives-*timestamp*.csv file produced by this script. It
 will be used by later runs to produce an Additions-*timestamp*.csv file
