@@ -92,6 +92,8 @@ BEGIN {
     ### To add a column change the following line.
     # "Source  Name  Email  Side  Gender  Pct  cMs  Segs  Longest  Relationship"
     sex = $Gender
+    # Sometimes, FTDNA puts two spaces between names. Make it a single space. 
+    gsub (/  /," ",$Name)
     sub (/Female/,"F",sex)
     sub (/Male/,"M",sex)
     sub (/U/,"",sex)
