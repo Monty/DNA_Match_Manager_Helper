@@ -68,7 +68,7 @@ as **Match-23andMe_1.13.2020.2.48.28PM.csv** (*or any other name containing
 3. In a terminal window, type: **`./makeDNASpreadsheet.sh`** to generate a
 match summary spreadsheet and (*if there are any*) a list of matches added
 since the previous run. They will have *timestamped* names such as
-Relatives-*2020-01-11.103106*.csv and Additions-*2020-01-11.103106*.csv
+**Relatives-*2020-01-11.103106*.csv** and **Additions-*2020-01-11.103106*.csv**
 
     On macOS you can simply double click **`run.command`** in a Finder window
 (*or right-click and select 'Open'*) which will automatically open a Terminal
@@ -84,15 +84,15 @@ cM, enter 19.5 as some web sites show cMs rounded up to the next whole number.*
 
 ### ProTips
 
-Create a permanent master spreadsheet from the Relatives-*timestamp*.csv file
+Create a permanent master spreadsheet from the **Relatives-*timestamp*.csv** file
 and save it as a non-csv spreadsheet. Use that spreadsheet to make notes, add
 missing data, and change erroneous relationships (*e.g. second cousin to first
 cousin once removed, etc.*). Add as many columns as you need for things like
 most recent common ancestor, birth year, location, common surnames, or data
 from [site specific columns][columns].
 
-Don't delete the Relatives-*timestamp*.csv file produced by this script. It
-will be used by later runs to produce an Additions-*timestamp*.csv file
+Don't delete the **Relatives-*timestamp*.csv** file produced by this script. It
+will be used by later runs to produce an **Additions-*timestamp*.csv** file
 containing data that can be cut/pasted into your master spreadsheet. You can
 either paste that data one line at a time into its proper slot, or paste it all
 at the bottom and then sort it by Shared cMs (*descending*), Shared %
