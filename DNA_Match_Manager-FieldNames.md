@@ -8,7 +8,7 @@ the positions don't matter.
 2 | Download Date | The date the Match was downloaded with MM
 3 | Match Test ID | Test ID for the Match's test
 4 | **Match Name** | The name of the Match
-5 | Email | Email address of the Match (if provided)
+5 | **Email** | Email address of the Match (if provided)
 6 | **Match Gender** | Gender of the Match
 7 | an_Source Test Subject | Ancestry: The name of the person who took the DNA test, the Test Subject  Useful if you've uploaded multiple tests to Ancestry.
 8 | an_Source Test ID | Ancestry: Test ID for the Test Subject

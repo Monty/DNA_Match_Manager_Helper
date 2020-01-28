@@ -23,6 +23,7 @@ The resulting spreadsheet contains the following columns:
 |--------:|:-------------|
 | Source Site | Site the data came from - *e.g. Ancestry, 23andMe, etc.* |
 | Match Name | Name of the person who is a DNA match |
+| Email | Email address of the Match (if provided) |
 | Side | P, M, or blank - *i.e. P[aternal] or M[aternal]* |
 | Gender | M, F, or blank |
 | Shared % | Percentage of DNA shared - *computed if not provided* |
@@ -87,8 +88,7 @@ Create a permanent master spreadsheet from the Relatives-*timestamp*.csv file
 and save it as a non-csv spreadsheet. Use that spreadsheet to make notes, add
 missing data, and change erroneous relationships (*e.g. second cousin to first
 cousin once removed, etc.*). Add as many columns as you need for things like
-email address, most recent common ancestor, birth year, location, common
-surnames, etc.
+most recent common ancestor, birth year, location, common surnames, etc.
 
 Don't delete the Relatives-*timestamp*.csv file produced by this script. It
 will be used by later runs to produce an Additions-*timestamp*.csv file

@@ -9,8 +9,10 @@ BEGIN {
 
 /^Source Site/ {
     for ( i = 1; i <= NF; i++ ) {
+        ### To add a site specific column, add an if statement below. The file awkStatements.txt will help.
         if ($i == "Source Site") Source = i
         if ($i == "Match Name") Name = i
+        if ($i == "Email") Email = i
         if ($i == "Match Gender") Gender = i
         if ($i == "an_Shared cM") an_cMs = i
         if ($i == "an_Shared Segments") an_segs = i
@@ -30,10 +32,12 @@ BEGIN {
         if ($i == "mh_Number Shared Segments") mh_segs = i
         if ($i == "mh_Largest Segment cM") mh_longest_cM = i
     }
-    print "Source Site\tMatch Name\tSide\tSex\tShared %\tShared cMs\tShared Segs\tLongest Seg\tRelationship"
+    ### To add a column change the following line.
+    print "Source Site\tMatch Name\tEmail\tSide\tSex\tShared %\tShared cMs\tShared Segs\tLongest Seg\tRelationship"
     next
 }
 
+### To add a site specific column change each of the folllowing clauses.
 /^23 & Me/ {
     if ($tw_pct*cMs_pct_factor < cMs_min) next
     side = ""
@@ -85,7 +89,8 @@ BEGIN {
 }
 
 {
-    # "Source  Name  Side  Gender  Pct  cMs  Segs  Longest  Relationship"
+    ### To add a column change the following line.
+    # "Source  Name  Email  Side  Gender  Pct  cMs  Segs  Longest  Relationship"
     sex = $Gender
     sub (/Female/,"F",sex)
     sub (/Male/,"M",sex)
@@ -98,6 +103,7 @@ BEGIN {
     gsub (/Cousin/,"cousin",relationship)
     gsub (/; Once Removed/," - once removed",relationship)
     gsub (/; Twice Removed/," - twice removed",relationship)
-    printf ("%s\t%s\t%s\t%s\t%.2f\t%.0f\t%s\t%s\t%s\n", $Source ,$Name, \
+    ### To add a column change the following statement.
+    printf ("%s\t%s\t%s\t%s\t%s\t%.2f\t%.0f\t%s\t%s\t%s\n", $Source ,$Name, $Email, \
             side, sex, pct, cMs, segs, longest_cM, relationship)
 }
