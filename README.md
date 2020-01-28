@@ -68,7 +68,7 @@ as **Match-23andMe_1.13.2020.2.48.28PM.csv** (*or any other name containing
 3. In a terminal window, type: **`./makeDNASpreadsheet.sh`** to generate a
 match summary spreadsheet and (*if there are any*) a list of matches added
 since the previous run. They will have *timestamped* names such as
-Relatives-*200111.103106*.csv and Additions-*200111.103106*.csv
+Relatives-*2020-01-11.103106*.csv and Additions-*2020-01-11.103106*.csv
 
     On macOS you can simply double click **`run.command`** in a Finder window
 (*or right-click and select 'Open'*) which will automatically open a Terminal

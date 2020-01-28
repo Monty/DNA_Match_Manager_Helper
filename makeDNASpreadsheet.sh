@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Process most recently downloaded DNA Match Manager spreadsheets and generate diffs
 
-DATE="$(date +%y%m%d)"
-LONGDATE="$(date +%y%m%d.%H%M%S)"
+DATE="$(date +%Y-%m-%d)"
+LONGDATE="$(date +%Y-%m-%d.%H%M%S)"
 
 # Make sure we are in the correct directory
 DIRNAME=$(dirname "$0")
@@ -36,7 +36,7 @@ ADDITIONS_NEW="Additions-$LONGDATE.csv"
 rm -f $RELATIVES_TMP
 touch $RELATIVES_TMP
 # Latest previously generated spreadsheet
-find . -maxdepth 1 -name "Relatives*.csv" | grep -q '^.'
+find . -maxdepth 1 -name "Relatives-*.csv" | grep -q '^.'
 if [ $? == 0 ]; then
     RELATIVES_CURRENT=$(ls -1t Relatives-*csv | head -1)
 fi
