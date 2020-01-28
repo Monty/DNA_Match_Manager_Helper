@@ -1,5 +1,8 @@
-# Generated awk statements that can be modified and used in getFieldsFromDNA.awk
-# Change the variable name to be simple and meaningful, e.g. an_cMs, an_segs, mh_cMs, mh_segs, etc.
+# Software generated awk statements modified so they can be used in getFieldsFromDNA.awk
+#
+### If you add any columns make the prefix correspond to the source site - i.e. an_, gm_, ft_, tw_, mh_
+### and the suffix identical between sites - e.g. pct, cMs, segs, relationship, longest_cM
+### thus making the variable name simple and meaningful - e.g. an_cMs, an_segs, mh_cMs, mh_segs, etc.
 
 if ($i == "Source Site") Source = i
 if ($i == "Download Date") Date = i
