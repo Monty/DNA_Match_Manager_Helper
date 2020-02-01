@@ -89,6 +89,7 @@ BEGIN {
 }
 
 {
+    # Standardize and print one row of data
     sex = $Gender
     # Sometimes, FTDNA puts two spaces between names. Make it a single space. 
     gsub (/  /," ",$Name)
