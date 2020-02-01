@@ -18,6 +18,7 @@
 # Local backups
 *.bak
 
-# Downloaded data used for examination and testing
+# Archive, non-DMM downloaded raw data used for examination and comaprison, tests
+/archive/
 /native_downloads/
 /test/
