@@ -4,6 +4,9 @@
 # Output from running any commands
 *.csv
 
+# In case you save a download
+*.zip
+
 # In case you save a spreadsheet
 *.xls
 *.ods
