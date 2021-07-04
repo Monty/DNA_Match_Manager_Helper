@@ -24,9 +24,18 @@ BEGIN {
     next
 }
 
+/Full Name/ {
+    header = "FTDNA,,,"
+    printf "Source Site,Email,Match Gender,Match Name"
+    printf ",ft_Total cM,ft_Suggested Relationship"
+    printf ",ft_Longest Centimorgans\n"
+    next
+}
+
 {
     sub (/,\)/,"\)")
     gsub (/"/,"")
+    gsub (/Nephew, /,"Cousin; ")
     gsub (/Cousin, /,"Cousin; ")
     printf ("%s",header)
     print
