@@ -35,6 +35,7 @@ BEGIN {
 {
     sub (/,\)/,"\)")
     sub (/Jacinto Cruz, Jr/,"Jacinto Cruz Jr")
+    sub (/Robert Reyes, Sr/,"Robert Reyes Sr")
     gsub (/"/,"")
     gsub (/Nephew, /,"Cousin; ")
     gsub (/Cousin, /,"Cousin; ")
