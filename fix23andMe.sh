@@ -16,6 +16,6 @@
 DATE="$(date +%Y-%m-%d)"
 
 target=$1
-xsv select 1,10,12,15,16 "$target" | awk -f fixFields.awk | sort -u |
+unzip -p "$target" | xsv select 1,10,12,15,16 | awk -f fixFields.awk | sort -u |
     sort --key=1,1r --key=2,2 >Match-23andMe_$DATE.csv
 
