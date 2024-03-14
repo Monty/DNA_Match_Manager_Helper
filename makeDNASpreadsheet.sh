@@ -38,7 +38,7 @@ touch $RELATIVES_TMP
 # Latest previously generated spreadsheet
 find . -maxdepth 1 -name "Relatives-*.csv" | grep -q '^.'
 if [ $? == 0 ]; then
-    RELATIVES_CURRENT=$(ls -1t Relatives-*csv | head -1)
+    RELATIVES_CURRENT=$(find Relatives-*csv | head -1)
 fi
 
 # Process files downloaded by DNA Match Manager
@@ -50,7 +50,7 @@ for i in "${KEYS[@]}"; do
     target="*$i*.csv"
     find . -maxdepth 1 -name "$target" | grep -q '^.'
     if [ $? == 0 ]; then
-        CURRENT_FILE=$(ls -1t $target | head -1)
+        CURRENT_FILE=$(find $target | head -1)
         echo $CURRENT_FILE
         awk -v cMs_min=$cMs_min -f getFieldsFromDNA.awk $CURRENT_FILE >>$RELATIVES_TMP
     fi
