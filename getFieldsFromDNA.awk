@@ -92,22 +92,22 @@ BEGIN {
     # Standardize and print one row of data
     sex = $Gender
     # Sometimes, FTDNA puts two spaces between names. Make it a single space. 
-    gsub (/  /," ",$Name)
-    sub (/Female/,"F",sex)
-    sub (/Male/,"M",sex)
-    sub (/U/,"",sex)
-    sub (/PARENT_CHILD/,"Parent or child",relationship)
-    sub (/CLOSE_FAMILY/,"Close family",relationship)
-    sub (/FIRST_COUSIN/,"1st cousin",relationship)
-    sub (/SECOND_COUSIN/,"2nd cousin",relationship)
-    sub (/THIRD_COUSIN/,"3rd cousin",relationship)
-    gsub (/Cousin/,"cousin",relationship)
-    gsub (/; Once Removed/," - once removed",relationship)
-    gsub (/; Twice Removed/," - twice removed",relationship)
+    gsub(/  /," ",$Name)
+    sub(/Female/,"F",sex)
+    sub(/Male/,"M",sex)
+    sub(/U/,"",sex)
+    sub(/PARENT_CHILD/,"Parent or child",relationship)
+    sub(/CLOSE_FAMILY/,"Close family",relationship)
+    sub(/FIRST_COUSIN/,"1st cousin",relationship)
+    sub(/SECOND_COUSIN/,"2nd cousin",relationship)
+    sub(/THIRD_COUSIN/,"3rd cousin",relationship)
+    gsub(/Cousin/,"cousin",relationship)
+    gsub(/; Once Removed/," - once removed",relationship)
+    gsub(/; Twice Removed/," - twice removed",relationship)
     ### To add a column change the following 2 comment lines. Ditto in makeDNASpreadsheet.sh
     #      1      2      3     4      5      6    7    8      9           10
     #    Source  Name  Email  Side  Gender  Pct  cMs  Segs  Longest  Relationship
     ### To add a column change the following statement.
-    printf ("%s\t%s\t%s\t%s\t%s\t%.2f\t%.0f\t%s\t%s\t%s\n", $Source ,$Name, $Email, \
+    printf("%s\t%s\t%s\t%s\t%s\t%.2f\t%.0f\t%s\t%s\t%s\n", $Source ,$Name, $Email, \
             side, sex, pct, cMs, segs, longest_cM, relationship)
 }
