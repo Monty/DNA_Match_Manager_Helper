@@ -14,6 +14,7 @@
 # Hide temporary versions of files from git
 *[0-9].awk
 *[0-9].command
+*[0-9].js
 *[0-9].md
 *[0-9].sh
 *[0-9].txt
@@ -25,3 +26,16 @@
 /archive/
 /native_downloads/
 /test/
+
+# Don't preserve stuff loaded by playwright
+node_modules/
+/tests/
+/tests-examples/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/blob-report/
+playwright.config.js
+package.json
+package-lock.json
