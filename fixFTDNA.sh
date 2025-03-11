@@ -9,5 +9,5 @@
 DATE="$(date +%Y-%m-%d)"
 
 target=$1
-xsv select 1,7,6,8 "$target" | awk -f fixFields.awk >Match-FTDNA_$DATE.csv
-
+xsv select 1,7,6,8 "$target" |
+    awk -f fixFields.awk >Match-FTDNA_$DATE.csv

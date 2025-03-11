@@ -17,11 +17,11 @@ DATE="$(date +%Y-%m-%d)"
 target=$1
 
 unzip -p "$target" | head -100 | tee temp1 | xsv select 9 | tr -d '"' |
-    awk -F, '{print $1}' > temp2
+    awk -F, '{print $1}' >temp2
 
-xsv select 2,10-13 temp1 > temp3
+xsv select 2,10-13 temp1 >temp3
 
-paste temp2 temp3 | sed "s/$TAB/,/g" | xsv select 2,1,3-6 | awk -f fixFields.awk \
-    >Match-MyHeritage_$DATE.csv
+paste temp2 temp3 | sed "s/$TAB/,/g" | xsv select 2,1,3-6 |
+    awk -f fixFields.awk >Match-MyHeritage_$DATE.csv
 
 rm temp?
